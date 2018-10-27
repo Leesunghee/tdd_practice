@@ -34,13 +34,10 @@ public class StringCalculator {
         }
     }
 
-    public static int[] toInts(String[] values) {
-        int[] numbers = new int[values.length];
+    public static Positive[] toInts(String[] values) {
+        Positive[] numbers = new Positive[values.length];
         for (int i = 0; i < values.length; i++) {
-            numbers[i] = toInt(values[i]);
-            if (numbers[i] < 0) {
-                throw new RuntimeException();
-            }
+            numbers[i] = new Positive(values[i]);
         }
         return numbers;
     }
@@ -54,12 +51,12 @@ public class StringCalculator {
         return number;
     }
 
-    public static int sum(int[] numbers) {
-        int result = 0;
-        for (int number : numbers) {
-           result += number;
+    public static int sum(Positive[] numbers) {
+        Positive result = new Positive(0);
+        for (Positive number : numbers) {
+           result = result.add(number);
         }
-        return result;
+        return result.getNumber();
     }
 
     // Compose method pattern

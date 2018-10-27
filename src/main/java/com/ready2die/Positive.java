@@ -14,4 +14,12 @@ public class Positive {
         }
         this.number = number;
     }
+
+    public Positive add(Positive other) {
+        return new Positive(this.number + other.number);
+    }
+
+    public int getNumber() {
+        return this.number;
+    }
 }
