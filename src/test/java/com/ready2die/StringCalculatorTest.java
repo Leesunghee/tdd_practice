@@ -27,7 +27,7 @@ public class StringCalculatorTest {
         assertThat(StringCalculator.add("1,2:3")).isEqualTo(6);
     }
 
-    @Test
+    @Test(expected = RuntimeException.class)
     public void 음수값() {
         StringCalculator.add("-1,2,3");
     }

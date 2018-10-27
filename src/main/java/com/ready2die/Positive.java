@@ -6,7 +6,6 @@ public class Positive {
     public Positive(String value) {
 
         this(Integer.parseInt(value));
-
     }
 
     public Positive(int number) {
